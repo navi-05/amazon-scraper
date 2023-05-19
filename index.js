@@ -1,5 +1,6 @@
 import express from 'express'
 import axios from 'axios'
+import cors from 'cors'
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -7,6 +8,7 @@ const PORT = process.env.PORT || 5000
 const generateScraperUrl = (apiKey) => `http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res) => res.json("Welcome"))
 
